@@ -24,7 +24,7 @@ export default function Contact() {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone",
-      details: "+91-XXXXXXXXXX",
+      details: "+91-8218011747, +91-84334 62891",
       description: "Call us for immediate assistance"
     },
     {
@@ -36,7 +36,7 @@ export default function Contact() {
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Address",
-      details: "123 Greenway Road, Solar City, India",
+      details: "Shree Balaji Complex, Silver City, Rohta, Gwalior Road, Agra",
       description: "Visit our office for consultation"
     },
     {

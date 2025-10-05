@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "/solar_panels_field_e_97867b92.jpg";
-
+import { Link } from "wouter";
 export function HeroSection() {
   return (
     <section
@@ -67,23 +67,26 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
+            <Link href="/about">
             <Button
               size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground border border-primary-border min-w-[180px]"
               data-testid="button-get-quote"
-            >
+              >
               Get a Quote
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
-
+            </Link>
+            <Link href="/contact">
             <Button
               size="lg"
               variant="outline"
               className="bg-white/10 backdrop-blur-md border-white/30 text-white hover:bg-white/20 min-w-[180px]"
               data-testid="button-contact-us"
-            >
+              >
               Contact Us
             </Button>
+              </Link>
           </motion.div>
         </motion.div>
 

@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Facebook, Twitter, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Twitter, Linkedin, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function Footer() {
@@ -21,6 +21,15 @@ export function Footer() {
               Empowering a greener future, one solar panel at a time.
             </p>
             <div className="flex gap-2">
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => window.open("https://wa.me/918218011747?text=Hello! I'm interested in your solar energy solutions.", "_blank")}
+                data-testid="button-whatsapp"
+                className="hover:bg-green-100 hover:border-green-500"
+              >
+                <MessageCircle className="w-4 h-4" />
+              </Button>
               <Button
                 variant="outline"
                 size="icon"
@@ -88,14 +97,14 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-3 text-sm">
                 <Phone className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-muted-foreground">+91 98765 43210</span>
+                <span className="text-muted-foreground">+91-8218011747, +91-84334 62891</span>
               </li>
               <li className="flex items-start gap-3 text-sm">
                 <MapPin className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                 <span className="text-muted-foreground">
-                  123 Solar Street, Green Valley
+                  Shree Balaji Complex, Silver City
                   <br />
-                  Mumbai, Maharashtra 400001
+                  Rohta, Gwalior Road, Agra
                 </span>
               </li>
             </ul>

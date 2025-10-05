@@ -28,7 +28,7 @@ export function ContactSection() {
   };
 
   const handleWhatsApp = () => {
-    const phoneNumber = "919876543210";
+    const phoneNumber = "918218011747";
     const message = encodeURIComponent("Hello! I'm interested in solar energy solutions.");
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
     console.log("WhatsApp chat opened");
@@ -159,7 +159,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Phone</h3>
-                    <p className="text-muted-foreground">+91 98765 43210</p>
+                    <p className="text-muted-foreground">+91-8218011747, +91-8433462891</p>
                   </div>
                 </div>
               </CardContent>
@@ -174,9 +174,9 @@ export function ContactSection() {
                   <div>
                     <h3 className="font-semibold mb-1">Office</h3>
                     <p className="text-muted-foreground">
-                      123 Solar Street, Green Valley
+                      27, Shree Balaji complex, Silver City, Rohta, 
                       <br />
-                      Mumbai, Maharashtra 400001
+                      Gwalior Road, Agra
                     </p>
                   </div>
                 </div>
@@ -185,7 +185,7 @@ export function ContactSection() {
 
             <div className="rounded-lg overflow-hidden h-64 bg-muted">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.8466534274947!2d72.87765931490176!3d19.01744138712067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7cee2e4b1f21b%3A0x28e7c7c8c0b88e12!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d527.9171897428048!2d78.00068015359219!3d27.112543076157465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3974750000229fcd%3A0xcad9a5bcd380994b!2sSilver%20City%20colony!5e0!3m2!1sen!2sin!4v1759685143281!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

@@ -2,6 +2,7 @@ import { Zap, Wrench, Calculator, Battery, DollarSign, Users, CheckCircle, Star 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 
 export default function Services() {
   const services = [
@@ -16,7 +17,7 @@ export default function Services() {
         "Grid connection and commissioning",
         "Performance testing and optimization"
       ],
-      image: "https://images.unsplash.com/photo-1509391366360-2e959784a276"
+      image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=500&h=300&fit=crop&auto=format"
     },
     {
       icon: <Wrench className="w-12 h-12 text-blue-600" />,
@@ -29,7 +30,7 @@ export default function Services() {
         "Emergency repair services",
         "24/7 technical support"
       ],
-      image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4"
+      image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=500&h=300&fit=crop&auto=format"
     },
     {
       icon: <Calculator className="w-12 h-12 text-green-600" />,
@@ -42,7 +43,7 @@ export default function Services() {
         "Regulatory compliance guidance",
         "Custom recommendations"
       ],
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40"
+      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=300&fit=crop&auto=format"
     },
     {
       icon: <Battery className="w-12 h-12 text-purple-600" />,
@@ -55,7 +56,7 @@ export default function Services() {
         "Backup power systems",
         "Load balancing optimization"
       ],
-      image: "https://images.unsplash.com/photo-1593941707882-a5bac6861d75"
+      image: "https://plus.unsplash.com/premium_photo-1715811632378-044ee74b6f77?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       icon: <DollarSign className="w-12 h-12 text-red-600" />,
@@ -68,7 +69,7 @@ export default function Services() {
         "Tax incentive guidance",
         "ROI optimization strategies"
       ],
-      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f"
+      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=500&h=300&fit=crop&auto=format"
     }
   ];
 
@@ -239,18 +240,23 @@ export default function Services() {
             can transform your energy future.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="/contact" 
-              className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-            >
-              Get Free Consultation
-            </a>
-            <a 
-              href="/calculator" 
-              className="border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors"
-            >
-              Calculate Your Savings
-            </a>
+            <Link href="/contact">
+              <Button 
+                className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors border-0"
+                size="lg"
+              >
+                Get a Quote
+              </Button>
+            </Link>
+            <Link href="/contact">
+              <Button 
+                variant="outline"
+                className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors"
+                size="lg"
+              >
+                Contact Us
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

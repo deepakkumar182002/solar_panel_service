@@ -44,12 +44,12 @@ export function VideoSection() {
                 <Play className="w-10 h-10 md:w-12 md:h-12 text-primary-foreground ml-1" />
               </div>
               <div className="absolute inset-0 flex items-center justify-center text-white text-xl md:text-2xl font-semibold pointer-events-none mt-32">
-                Watch Introduction
+                Watch Future of energy
               </div>
             </div>
           ) : (
             <video className="w-full h-full object-cover" controls autoPlay muted playsInline>
-              <source src="/Hero_section.mp4" type="video/mp4" />
+              <source src="/SeeSolar_Energy_in_Action.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           ) }

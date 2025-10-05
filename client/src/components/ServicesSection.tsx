@@ -1,37 +1,42 @@
 import { motion } from "framer-motion";
-import { Sun, Wrench, Lightbulb, Battery, DollarSign } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const services = [
   {
-    icon: Sun,
+    image: "https://lfcdn-1c183.kxcdn.com/img/post_img/1701261227_poster%20(2).jpg",
     title: "Solar Power Plant Design and Installation",
     description:
       "Comprehensive solar system design and professional installation services for all property types.",
   },
   {
-    icon: Wrench,
+    image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=400&h=300&fit=crop&auto=format",
     title: "Maintenance and Support",
     description:
       "Regular maintenance, monitoring, and 24/7 technical support to ensure optimal performance.",
   },
   {
-    icon: Lightbulb,
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop&auto=format",
     title: "Consultation and Feasibility Studies",
     description:
       "Expert consultation and detailed feasibility analysis for your solar energy projects.",
   },
   {
-    icon: Battery,
+    image: "https://healthysun.in/wp-content/uploads/2024/10/Things-You-Need-to-Know-about-Solar-Energy-Storage-Systems.jpg",
     title: "Energy Storage Solutions",
     description:
       "Advanced battery storage systems to maximize energy independence and reliability.",
   },
   {
-    icon: DollarSign,
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=300&fit=crop&auto=format",
     title: "Solar Financing and Incentives",
     description:
       "Flexible financing options and assistance with government incentives and tax credits.",
+  },
+  {
+    image: "https://www.bridgethings.com/wp-content/uploads/2021/05/Smart-Monitoring-System.png",
+    title: "Smart Energy Monitoring",
+    description:
+      "Advanced monitoring systems to track energy production, consumption, and system performance in real-time.",
   },
 ];
 
@@ -67,12 +72,18 @@ export function ServicesSection() {
                 className="h-full hover-elevate active-elevate-2 transition-all duration-300 cursor-pointer"
                 data-testid={`card-service-${index}`}
               >
-                <CardContent className="p-6 md:p-8">
-                  <div className="w-14 h-14 bg-primary/10 rounded-md flex items-center justify-center mb-6">
-                    <service.icon className="w-7 h-7 text-primary" />
+                <CardContent className="p-0">
+                  <div className="relative overflow-hidden rounded-t-lg">
+                    <img 
+                      src={service.image} 
+                      alt={service.title}
+                      className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105"
+                    />
                   </div>
-                  <h3 className="text-xl font-heading font-semibold mb-3">{service.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                  <div className="p-6 md:p-8">
+                    <h3 className="text-xl font-heading font-semibold mb-3">{service.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                  </div>
                 </CardContent>
               </Card>
             </motion.div>
