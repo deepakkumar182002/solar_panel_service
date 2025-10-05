@@ -47,16 +47,12 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link href="/" data-testid="link-home">
-            <div className="flex items-center gap-2 hover-elevate active-elevate-2 px-3 py-2 rounded-md cursor-pointer">
-              <div className="w-8 h-8 md:w-10 md:h-10 bg-primary rounded-md flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg md:text-xl">D</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-heading font-bold text-sm md:text-base leading-tight">
-                  Devanshi Renewable
-                </span>
-                <span className="text-xs text-muted-foreground leading-tight">Energy</span>
-              </div>
+            <div className="flex items-center hover-elevate active-elevate-2 px-3 py-2 rounded-md cursor-pointer">
+              <img 
+                src="/logo solar.png" 
+                alt="Devanshi Renewable Energy" 
+                className="h-10 md:h-[70px] w-auto object-contain "
+              />
             </div>
           </Link>
 
@@ -65,7 +61,7 @@ export function Navigation() {
               <Link key={link.href} href={link.href}>
                 <Button
                   variant="ghost"
-                  size="sm"
+                  size="lg"
                   className={location === link.href ? "bg-accent" : ""}
                   data-testid={`link-${link.label.toLowerCase().replace(" ", "-")}`}
                 >

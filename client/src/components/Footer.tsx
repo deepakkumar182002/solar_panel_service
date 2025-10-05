@@ -10,16 +10,12 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-primary rounded-md flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">D</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-heading font-bold text-base leading-tight">
-                  Devanshi Renewable
-                </span>
-                <span className="text-xs text-muted-foreground leading-tight">Energy</span>
-              </div>
+            <div className="mb-4">
+              <img 
+                src="/logo solar.png" 
+                alt="Devanshi Renewable Energy" 
+                className="h-[70px] w-auto object-contain"
+              />
             </div>
             <p className="text-sm text-muted-foreground mb-4">
               Empowering a greener future, one solar panel at a time.
