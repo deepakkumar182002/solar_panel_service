@@ -12,8 +12,6 @@ type Message = {
   timestamp: Date;
 };
 
-const OPENAI_API_KEY = import.meta.env.VITE_OPENAI_API_KEY || "";
-
 export function ChatBot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
@@ -75,52 +73,32 @@ export function ChatBot() {
   };
 
   const getOpenAIResponse = async (input: string): Promise<string> => {
-    const systemPrompt = `आप Devanshi Renewable Energy के लिए एक सहायक solar energy assistant हैं। आप हिंदी और अंग्रेजी दोनों भाषाओं में जवाब दे सकते हैं। 
-    
-    आपको solar energy, installations, costs, maintenance, benefits के बारे में सटीक और उपयोगी जानकारी देनी चाहिए। 
-    
-    मुख्य सेवाएं:
-    - Residential Solar Installation (घरेलू सोलर)
-    - Commercial Solar Solutions (व्यावसायिक सोलर)  
-    - Industrial Solar Plants (औद्योगिक सोलर)
-    - Maintenance & Support (रखरखाव)
-    - Solar Calculator (सोलर कैलकुलेटर)
-    
-    कीमत के बारे में पूछने पर बताएं कि costs vary करती है और accurate quotes के लिए consultation recommend करें।
-    हमेशा professional और encouraging रहें solar energy adoption के लिए।
-    
-    Response concise but informative रखें।`;
-
     try {
-      const response = await fetch('https://api.openai.com/v1/chat/completions', {
+      // Use Vercel API endpoint or fallback to local for development
+      const apiUrl = process.env.NODE_ENV === 'production' 
+        ? '/api/chat' 
+        : `${window.location.origin}/api/chat`;
+
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${OPENAI_API_KEY}`,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          model: 'gpt-3.5-turbo',
-          messages: [
-            { role: 'system', content: systemPrompt },
-            { role: 'user', content: input }
-          ],
-          max_tokens: 200,
-          temperature: 0.8,
+          message: input
         }),
       });
 
       if (!response.ok) {
-        const errorData = await response.json().catch(() => null);
-        console.error('OpenAI API Error:', response.status, errorData);
-        throw new Error(`OpenAI API error: ${response.status}`);
+        throw new Error(`API error: ${response.status}`);
       }
 
       const data = await response.json();
       
-      if (data.choices && data.choices[0] && data.choices[0].message) {
-        return data.choices[0].message.content.trim();
+      if (data.message) {
+        return data.message.trim();
       } else {
-        throw new Error('Invalid response format from OpenAI');
+        throw new Error('Invalid response format from API');
       }
     } catch (error) {
       console.error('OpenAI Request Error:', error);
