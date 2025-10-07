@@ -39,7 +39,7 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             data-testid="text-hero-title"
           >
-            Welcome to Devanshi Renewable Energy
+            Welcome to Ecosun Energy Solutions
           </motion.h1>
 
           <motion.p

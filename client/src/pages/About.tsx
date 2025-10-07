@@ -40,12 +40,12 @@ export default function About() {
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1466611653911-95081537e5b7')] bg-cover bg-center opacity-10"></div>
         <div className="relative max-w-7xl mx-auto px-4 md:px-8">
           <div className="text-center">
-            <Badge className="mb-6 px-4 py-2 text-sm">About Devanshi Renewable Energy</Badge>
+            <Badge className="mb-6 px-4 py-2 text-sm">About Ecosun Energy Solutions</Badge>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
               Powering Tomorrow with Solar Innovation
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              At Devanshi Renewable Energy, we believe in the transformative power of renewable energy 
+              At Ecosun Energy Solutions, we believe in the transformative power of renewable energy 
               to shape a sustainable future for generations to come.
             </p>
           </div>

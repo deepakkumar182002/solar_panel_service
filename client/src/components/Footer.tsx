@@ -13,7 +13,7 @@ export function Footer() {
             <div className="mb-4">
               <img 
                 src="/logo solar.png" 
-                alt="Devanshi Renewable Energy" 
+                alt="Ecosun Energy Solutions" 
                 className="h-[70px] w-auto object-contain"
               />
             </div>
@@ -93,7 +93,7 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-sm">
                 <Mail className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-muted-foreground">info@devanshienergy.com</span>
+                <span className="text-muted-foreground">info@ecosunenergysolutions.in</span>
               </li>
               <li className="flex items-start gap-3 text-sm">
                 <Phone className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
@@ -113,7 +113,7 @@ export function Footer() {
 
         <div className="border-t border-border mt-12 pt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} Devanshi Renewable Energy. All rights reserved.
+            © {currentYear} Ecosun Energy Solutions. All rights reserved.
           </p>
         </div>
       </div>

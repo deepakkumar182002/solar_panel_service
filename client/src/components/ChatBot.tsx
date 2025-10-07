@@ -17,7 +17,7 @@ export function ChatBot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "1",
-      text: "नमस्ते! मैं Devanshi Renewable Energy का Solar Energy Assistant हूं। मैं आपकी solar energy से related सभी queries में help कर सकता हूं।\n\nआप मुझसे पूछ सकते हैं:\n• Solar installation cost\n• Savings calculator\n• Maintenance info\n• Government subsidies\n• Installation process\n\nकैसे मदद कर सकता हूं?",
+      text: "नमस्ते! मैं Ecosun Energy Solutions का Solar Energy Assistant हूं। मैं आपकी solar energy से related सभी queries में help कर सकता हूं।\n\nआप मुझसे पूछ सकते हैं:\n• Solar installation cost\n• Savings calculator\n• Maintenance info\n• Government subsidies\n• Installation process\n\nकैसे मदद कर सकता हूं?",
       sender: "bot",
       timestamp: new Date(),
     },

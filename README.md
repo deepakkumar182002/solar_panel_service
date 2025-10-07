@@ -1,6 +1,6 @@
 # DevanshiRenewables - Solar Panel Website
 
-A modern React-based website for Devanshi Renewable Energy company featuring solar panel services, AI chatbot, and interactive components.
+A modern React-based website for Ecosun Energy Solutions company featuring solar panel services, AI chatbot, and interactive components.
 
 ## 🌟 Features
 

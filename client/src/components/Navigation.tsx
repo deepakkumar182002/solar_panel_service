@@ -50,7 +50,7 @@ export function Navigation() {
             <div className="flex items-center hover-elevate active-elevate-2 px-3 py-2 rounded-md cursor-pointer">
               <img 
                 src="/logo solar.png" 
-                alt="Devanshi Renewable Energy" 
+                alt="Ecosun Energy Solutions" 
                 className="h-10 md:h-[70px] w-auto object-contain "
               />
             </div>

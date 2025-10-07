@@ -1,4 +1,4 @@
-# Design Guidelines for Devanshi Renewable Energy Website
+# Design Guidelines for Ecosun Energy Solutions Website
 
 ## Design Approach
 **Reference-Based Approach**: Inspired by https://trivenisolargeneration.in/ - a modern, professional solar energy website with clean layouts and strong visual hierarchy.

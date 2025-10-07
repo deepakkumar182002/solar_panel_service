@@ -30,7 +30,7 @@ export default function Contact() {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email", 
-      details: "contact@devanshienergy.com",
+      details: "info@ecosunenergysolutions.in",
       description: "Send us your questions anytime"
     },
     {

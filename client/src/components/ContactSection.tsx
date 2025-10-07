@@ -145,7 +145,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Email</h3>
-                    <p className="text-muted-foreground">info@devanshienergy.com</p>
+                    <p className="text-muted-foreground">info@ecosunenergysolutions.in</p>
                   </div>
                 </div>
               </CardContent>
