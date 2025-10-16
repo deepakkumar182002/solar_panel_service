@@ -6,8 +6,15 @@ export function VideoSection() {
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
-    <section className="py-16 md:py-24 bg-card" data-testid="section-video">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
+    <section className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-br from-slate-50 via-teal-50 to-cyan-50 dark:from-slate-900 dark:via-teal-950 dark:to-cyan-950" data-testid="section-video">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      
+      {/* Floating Background Blobs */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-teal-400/20 dark:bg-teal-500/10 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-xl animate-blob"></div>
+      <div className="absolute top-40 right-10 w-72 h-72 bg-cyan-400/20 dark:bg-cyan-500/10 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-xl animate-blob animation-delay-2000"></div>
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8">
         <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
@@ -28,31 +35,16 @@ export function VideoSection() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative aspect-video rounded-lg overflow-hidden bg-black shadow-xl"
+          className="relative aspect-video rounded-lg overflow-hidden shadow-xl"
           data-testid="container-video"
         >
-          { !isPlaying ? (
-            <div
-              className="absolute inset-0 flex items-center justify-center cursor-pointer group"
-              onClick={() => {
-                setIsPlaying(true);
-                console.log("Video play triggered");
-              }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent"></div>
-              <div className="w-20 h-20 md:w-24 md:h-24 bg-primary/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <Play className="w-10 h-10 md:w-12 md:h-12 text-primary-foreground ml-1" />
-              </div>
-              <div className="absolute inset-0 flex items-center justify-center text-white text-xl md:text-2xl font-semibold pointer-events-none mt-32">
-                Watch Future of energy
-              </div>
-            </div>
-          ) : (
-            <video className="w-full h-full object-cover" controls autoPlay muted playsInline>
-              <source src="/SeeSolar_Energy_in_Action.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          ) }
+          <iframe
+            className="w-full h-full"
+            src="https://www.youtube.com/embed/TzfnlPxCZv0"
+            title="See Solar Energy in Action"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
         </motion.div>
       </div>
     </section>

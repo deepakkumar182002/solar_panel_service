@@ -31,11 +31,18 @@ export function SolarCalculator() {
 
   return (
     <section
-      className="py-16 md:py-24 bg-background"
+      className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-br from-slate-50 via-teal-50 to-cyan-50 dark:from-slate-900 dark:via-teal-950 dark:to-cyan-950"
       id="calculator"
       data-testid="section-calculator"
     >
-      <div className="max-w-5xl mx-auto px-4 md:px-8">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      
+      {/* Floating Background Blobs */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-teal-400/20 dark:bg-teal-500/10 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-xl animate-blob"></div>
+      <div className="absolute bottom-20 right-10 w-72 h-72 bg-cyan-400/20 dark:bg-cyan-500/10 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-xl animate-blob animation-delay-2000"></div>
+      
+      <div className="max-w-5xl mx-auto px-4 md:px-8 relative z-10">
         <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
