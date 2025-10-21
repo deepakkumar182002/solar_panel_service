@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
+import { Link } from "wouter";
 
 export default function SolarCalculatorPage() {
   const [monthlyBill, setMonthlyBill] = useState<number>(5000);
@@ -353,18 +354,16 @@ export default function SolarCalculatorPage() {
                     <h3 className="text-2xl font-bold mb-4">Ready to Go Solar?</h3>
                     <p className="mb-6">Get a detailed quote and professional consultation</p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                      <a 
-                        href="/contact" 
-                        className="bg-white text-primary px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-                      >
-                        Get Free Consultation
-                      </a>
-                      <a 
-                        href="/services" 
-                        className="border-2 border-white px-6 py-2 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors"
-                      >
-                        View Our Services
-                      </a>
+                      <Link href="/contact">
+                        <a className="bg-white text-primary px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                          Get Free Consultation
+                        </a>
+                      </Link>
+                      <Link href="/services">
+                        <a className="border-2 border-white px-6 py-2 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors">
+                          View Our Services
+                        </a>
+                      </Link>
                     </div>
                   </CardContent>
                 </Card>

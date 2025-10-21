@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Link } from "wouter";
 
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -140,7 +141,7 @@ export default function Projects() {
       </section>
 
       {/* Projects Section */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
@@ -149,7 +150,6 @@ export default function Projects() {
             </p>
           </div>
 
-          {/* Category Filter */}
           <Tabs value={selectedCategory} onValueChange={setSelectedCategory} className="w-full">
             <TabsList className="grid grid-cols-4 w-full max-w-lg mx-auto mb-12">
               {categories.map((category) => (
@@ -164,7 +164,6 @@ export default function Projects() {
               ))}
             </TabsList>
 
-            {/* Projects Grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredProjects.map((project) => (
                 <Card key={project.id} className="hover:shadow-xl transition-shadow duration-300 overflow-hidden">
@@ -233,7 +232,7 @@ export default function Projects() {
             </div>
           </Tabs>
         </div>
-      </section>
+      </section> */}
 
       {/* Success Stories Section */}
       <section className="py-20 bg-muted/50">
@@ -305,18 +304,16 @@ export default function Projects() {
             renewable solar energy.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="/contact" 
-              className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-            >
-              Start Your Project
-            </a>
-            <a 
-              href="/calculator" 
-              className="border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors"
-            >
-              Calculate ROI
-            </a>
+            <Link href="/contact">
+              <a className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                Start Your Project
+              </a>
+            </Link>
+            <Link href="/calculator">
+              <a className="border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors">
+                Calculate ROI
+              </a>
+            </Link>
           </div>
         </div>
       </section>

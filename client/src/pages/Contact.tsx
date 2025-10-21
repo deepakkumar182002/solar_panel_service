@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import { Link } from "wouter";
 
 export default function Contact() {
   const { toast } = useToast();
@@ -460,18 +461,16 @@ export default function Contact() {
             clean, renewable solar energy. Get your free consultation today!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="/calculator" 
-              className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-            >
-              Calculate Savings
-            </a>
-            <a 
-              href="/services" 
-              className="border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors"
-            >
-              View Our Services
-            </a>
+            <Link href="/calculator">
+              <a className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                Calculate Savings
+              </a>
+            </Link>
+            <Link href="/services">
+              <a className="border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors">
+                View Our Services
+              </a>
+            </Link>
           </div>
         </div>
       </section>

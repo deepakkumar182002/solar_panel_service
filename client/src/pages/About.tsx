@@ -1,6 +1,7 @@
 import { Zap, Leaf, Award, Users, Target, Heart } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "wouter";
 
 export default function About() {
   const values = [
@@ -217,18 +218,16 @@ export default function About() {
             for generations to come.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="/contact" 
-              className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-            >
-              Get Free Consultation
-            </a>
-            <a 
-              href="/calculator" 
-              className="border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors"
-            >
-              Calculate Savings
-            </a>
+            <Link href="/contact">
+              <a className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                Get Free Consultation
+              </a>
+            </Link>
+            <Link href="/calculator">
+              <a className="border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors">
+                Calculate Savings
+              </a>
+            </Link>
           </div>
         </div>
       </section>
