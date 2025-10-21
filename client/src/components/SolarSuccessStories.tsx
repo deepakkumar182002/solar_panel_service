@@ -52,13 +52,7 @@ const solarImages: SolarImage[] = [
     title: "Solar Project 6",
     description: "Large-scale solar implementation",
   },
-  {
-    id: 7,
-    src: "/7.jpg",
-    alt: "Solar Installation Project 7",
-    title: "Solar Project 7",
-    description: "Rooftop solar panel installation",
-  },
+ 
   {
     id: 8,
     src: "/8.jpg",
@@ -66,13 +60,7 @@ const solarImages: SolarImage[] = [
     title: "Solar Project 8",
     description: "Solar energy infrastructure development",
   },
-  {
-    id: 9,
-    src: "/9.jpg",
-    alt: "Solar Installation Project 9",
-    title: "Solar Project 9",
-    description: "Complete solar power solution",
-  },
+
   {
     id: 10,
     src: "/10.jpg",
@@ -143,20 +131,8 @@ const solarImages: SolarImage[] = [
     title: "Solar Project 19",
     description: "Professional solar implementation",
   },
-  {
-    id: 20,
-    src: "/20.jpg",
-    alt: "Solar Installation Project 20",
-    title: "Solar Project 20",
-    description: "Solar power station development",
-  },
-  {
-    id: 21,
-    src: "/21.jpg",
-    alt: "Solar Installation Project 21",
-    title: "Solar Project 21",
-    description: "Modern solar installation",
-  },
+ 
+  
   {
     id: 22,
     src: "/22.jpg",
@@ -171,13 +147,7 @@ const solarImages: SolarImage[] = [
     title: "Solar Project 23",
     description: "Comprehensive solar solution",
   },
-  {
-    id: 24,
-    src: "/24.jpg",
-    alt: "Solar Installation Project 24",
-    title: "Solar Project 24",
-    description: "Solar energy project implementation",
-  },
+
   {
     id: 25,
     src: "/25.jpg",

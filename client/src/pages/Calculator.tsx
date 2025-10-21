@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Calculator, Sun, Zap, DollarSign, Leaf, TrendingUp } from "lucide-react";
+import { Calculator, Sun, Zap, IndianRupee, Leaf, TrendingUp } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -23,7 +23,15 @@ export default function SolarCalculatorPage() {
     { value: "hyderabad", label: "Hyderabad, Telangana", sunlight: 5.7 },
     { value: "ahmedabad", label: "Ahmedabad, Gujarat", sunlight: 6.2 },
     { value: "chennai", label: "Chennai, Tamil Nadu", sunlight: 5.4 },
-    { value: "kolkata", label: "Kolkata, West Bengal", sunlight: 4.8 }
+    { value: "kolkata", label: "Kolkata, West Bengal", sunlight: 4.8 },
+    { value: "agra", label: "Agra, Uttar Pradesh", sunlight: 5.5 },
+    { value: "firozabad", label: "Firozabad, Uttar Pradesh", sunlight: 5.4 },
+    { value: "lucknow", label: "Lucknow, Uttar Pradesh", sunlight: 5.3 },
+    { value: "mathura", label: "Mathura, Uttar Pradesh", sunlight: 5.5 },
+    { value: "aligarh", label: "Aligarh, Uttar Pradesh", sunlight: 5.4 },
+    { value: "fatehabad", label: "Fatehabad, Haryana", sunlight: 5.6 },
+    { value: "dholpur", label: "Dholpur, Rajasthan", sunlight: 5.7 },
+    { value: "hathras", label: "Hathras, Uttar Pradesh", sunlight: 5.4 }
   ];
 
   const propertyTypes = [
@@ -49,8 +57,16 @@ export default function SolarCalculatorPage() {
     
     // Calculate costs and savings
     const systemCost = recommendedSystemSize * selectedPropertyType.costPerKw;
-    const subsidyAmount = Math.min(systemCost * 0.3, 78000); // 30% subsidy up to ₹78k for residential
-    const netCost = systemCost - (propertyType === 'residential' ? subsidyAmount : 0);
+    // Government subsidy: ₹90,000 for 1-2kW, ₹1,08,000 for 3kW and above
+    let subsidyAmount = 0;
+    if (propertyType === 'residential') {
+      if (recommendedSystemSize >= 3) {
+        subsidyAmount = 108000;
+      } else if (recommendedSystemSize >= 1) {
+        subsidyAmount = 90000;
+      }
+    }
+    const netCost = systemCost - subsidyAmount;
     
     // Annual savings
     const annualGeneration = recommendedSystemSize * selectedLocation.sunlight * 365;
@@ -69,7 +85,7 @@ export default function SolarCalculatorPage() {
     setResults({
       systemSize: recommendedSystemSize,
       systemCost,
-      subsidyAmount: propertyType === 'residential' ? subsidyAmount : 0,
+      subsidyAmount: subsidyAmount,
       netCost,
       annualSavings,
       paybackYears,
@@ -248,7 +264,7 @@ export default function SolarCalculatorPage() {
                 <Card className="shadow-lg">
                   <CardHeader>
                     <CardTitle className="flex items-center gap-3 text-2xl">
-                      <DollarSign className="w-8 h-8 text-green-600" />
+                      <IndianRupee className="w-8 h-8 text-green-600" />
                       Financial Analysis
                     </CardTitle>
                   </CardHeader>

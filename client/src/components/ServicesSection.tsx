@@ -34,9 +34,9 @@ const services = [
   },
   {
     image: "https://www.bridgethings.com/wp-content/uploads/2021/05/Smart-Monitoring-System.png",
-    title: "Smart Energy Monitoring",
+    title: "Engineering, Procurement, and Construction (EPC)",
     description:
-      "Advanced monitoring systems to track energy production, consumption, and system performance in real-time.",
+      "Comprehensive EPC services for solar projects, ensuring timely and on-budget delivery.",
   },
 ];
 

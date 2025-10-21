@@ -103,23 +103,50 @@ export function ChatBot() {
     } catch (error) {
       console.error('OpenAI Request Error:', error);
       
-      // Fallback to default responses if OpenAI fails
+      // Fallback to FAQ-based responses if OpenAI fails
       const lowerInput = input.toLowerCase();
       
-      if (lowerInput.includes("price") || lowerInput.includes("cost") || lowerInput.includes("कीमत")) {
-        return "सोलर पैनल की कीमत system size पर निर्भर करती है। एक typical residential system (5-10 kW) की cost ₹3-6 लाख है। Accurate quote के लिए free consultation लें!";
-      }
-      if (lowerInput.includes("savings") || lowerInput.includes("बचत")) {
-        return "ज्यादातर customers अपने electricity bills में 50-70% की बचत करते हैं! हमारे Solar Calculator से अपनी potential savings calculate करें।";
-      }
-      if (lowerInput.includes("maintenance") || lowerInput.includes("रखरखाव")) {
-        return "Solar panels में बहुत कम maintenance चाहिए। Regular cleaning और annual inspection से 25+ साल तक चलते हैं। हमारे AMC packages भी उपलब्ध हैं।";
-      }
-      if (lowerInput.includes("install") || lowerInput.includes("time") || lowerInput.includes("समय")) {
-        return "Installation typically 2-5 दिन में पूरी हो जाती है। हमारी expert team सभी permits और grid connection handle करती है।";
+      // System costs
+      if (lowerInput.includes("cost") || lowerInput.includes("price") || lowerInput.includes("कीमत") || lowerInput.includes("खर्च")) {
+        return "सोलर सिस्टम की कीमत:\n• 1kW: ₹65k–₹80k\n• 2kW: ₹1.2L–₹1.6L\n• 3kW: ₹1.8L–₹2.1L\n• 5kW: ₹2.9L–₹3.1L\n• 10kW: ₹5.6L–₹5.8L\n\nRate: ₹55–₹70 per watt\n\nAccurate quote के लिए हमसे संपर्क करें!";
       }
       
-      return "मैं आपकी solar energy से related सभी queries में help कर सकता हूं! Free consultation के लिए हमसे contact करें या Solar Calculator use करके savings estimate करें।";
+      // Subsidy
+      if (lowerInput.includes("subsidy") || lowerInput.includes("सब्सिडी") || lowerInput.includes("yojana") || lowerInput.includes("योजना")) {
+        return "सरकारी सब्सिडी (PM Surya Ghar Yojana):\n• 1-2kW: ₹90,000 तक\n• 3kW और अधिक: ₹1,08,000 तक\n\nसब्सिडी मिलने का समय: 3 महीने\nआवेदन: https://pmsuryaghar.gov.in\n\nसिर्फ residential consumers के लिए MNRE-approved vendors के through।";
+      }
+      
+      // Savings
+      if (lowerInput.includes("saving") || lowerInput.includes("बचत") || lowerInput.includes("save")) {
+        return "मासिक बचत:\n• 1kW: ₹700–₹850/month\n• 5kW: ₹3,500–₹4,000/month\n\nPayback Period: 1.5–3 years\n\nSolar Calculator से अपनी exact savings calculate करें!";
+      }
+      
+      // Maintenance
+      if (lowerInput.includes("maintenance") || lowerInput.includes("रखरखाव") || lowerInput.includes("clean")) {
+        return "रखरखाव बहुत आसान है:\n• हर 10-15 दिन में panels clean करें\n• Annual check-up recommended\n\nवारंटी:\n• Panels: 25 साल\n• Inverter: 5-10 साल\n• Installation: 1 साल";
+      }
+      
+      // Installation & Time
+      if (lowerInput.includes("install") || lowerInput.includes("time") || lowerInput.includes("समय") || lowerInput.includes("apply")) {
+        return "Installation 2-5 दिन में पूरी हो जाती है।\n\nApply करें: https://pmsuryaghar.gov.in\n\nRoof space needed: 100 sq. ft. per kW\n\nहमारी expert team सभी permits और grid connection handle करती है!";
+      }
+      
+      // System Types
+      if (lowerInput.includes("type") || lowerInput.includes("प्रकार") || lowerInput.includes("kinds")) {
+        return "तीन मुख्य प्रकार:\n1. On-Grid: Grid से connected, net metering\n2. Off-Grid: Battery backup के साथ\n3. Hybrid: Grid + Battery दोनों\n\nNet Metering: Excess energy के लिए credit मिलता है।";
+      }
+      
+      // Power Generation
+      if (lowerInput.includes("generat") || lowerInput.includes("power") || lowerInput.includes("unit") || lowerInput.includes("बिजली")) {
+        return "Power Generation:\n• 4-5 units/day प्रति kW\n• Average sunlight conditions में\n\nBattery backup available:\n• Lithium batteries\n• Lead-acid batteries\n\nHybrid या Off-Grid systems में।";
+      }
+      
+      // Contact
+      if (lowerInput.includes("contact") || lowerInput.includes("संपर्क") || lowerInput.includes("call") || lowerInput.includes("phone")) {
+        return "संपर्क करें:\n📞 +91 8218011747\n🌐 ecosunenergysolutions.in\n\nFree consultation के लिए आज ही call करें!\n\nहमारी services:\n✓ Residential Solar\n✓ Commercial Solar\n✓ Industrial Solar Plants\n✓ Maintenance & Support";
+      }
+      
+      return "मैं आपकी solar energy से related सभी queries में help कर सकता हूं!\n\n• System costs & types\n• Government subsidy\n• Monthly savings\n• Installation process\n• Maintenance\n• Net metering\n\nकोई specific question पूछें या +91 8218011747 पर call करें।";
     }
   };
 

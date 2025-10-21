@@ -36,7 +36,7 @@ export default function Contact() {
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Address",
-      details: "Shree Balaji Complex, Silver City, Rohta, Gwalior Road, Agra",
+      details: "27, Shree Balaji Complex, Silver City, Rohta, Gwalior Road, Agra",
       description: "Visit our office for consultation"
     },
     {
@@ -92,15 +92,57 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Send email via API
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        // Also send to WhatsApp
+        const whatsappNumber = "918218011747";
+        const whatsappMessage = encodeURIComponent(
+          `New Contact Form Submission:\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nService: ${formData.service}\nMessage: ${formData.message}`
+        );
+        window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, "_blank");
+        
+        toast({
+          title: "Message Sent Successfully!",
+          description: "Thank you for contacting us. We'll get back to you within 24 hours.",
+        });
+        setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+      } else {
+        throw new Error('Failed to send email');
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      
+      // Fallback to mailto if API fails
+      const emailSubject = encodeURIComponent("New Contact Form Submission - EcoSun Energy");
+      const emailBody = encodeURIComponent(
+        `New Contact Form Submission:\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nService: ${formData.service}\nMessage: ${formData.message}`
+      );
+      window.open(`mailto:info@ecosunenergysolutions.in?subject=${emailSubject}&body=${emailBody}`, "_blank");
+      
+      // Also send to WhatsApp
+      const whatsappNumber = "918218011747";
+      const whatsappMessage = encodeURIComponent(
+        `New Contact Form Submission:\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nService: ${formData.service}\nMessage: ${formData.message}`
+      );
+      window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, "_blank");
+      
       toast({
-        title: "Message Sent Successfully!",
-        description: "Thank you for contacting us. We'll get back to you within 24 hours.",
+        title: "Message Sent!",
+        description: "Opening WhatsApp and Email for you.",
       });
       setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+    } finally {
       setIsSubmitting(false);
-    }, 2000);
+    }
   };
 
   const regions = [
@@ -285,7 +327,7 @@ export default function Contact() {
       </section>
 
       {/* Office Locations */}
-      <section className="py-20 bg-muted/50">
+      {/* <section className="py-20 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Locations</h2>
@@ -315,7 +357,7 @@ export default function Contact() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* FAQ Section */}
       <section className="py-20">

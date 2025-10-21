@@ -3,10 +3,10 @@ import { CheckCircle, Target, Eye, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const milestones = [
-  { year: "2018", event: "Company Founded", description: "Started with a vision for clean energy" },
-  { year: "2020", event: "100+ Projects", description: "Completed installations across multiple states" },
-  { year: "2022", event: "Industry Recognition", description: "Awarded Best Solar Solutions Provider" },
-  { year: "2024", event: "Sustainable Future", description: "500+ MW total installed capacity" },
+  { year: "2022", event: "Company Founded", description: "Started with a vision for clean energy" },
+  { year: "2023", event: "65+ Projects", description: "Completed installations across multiple cities" },
+  { year: "2024", event: "Industry Recognition", description: "Awarded Best Solar Solutions Provider In Agra" },
+  { year: "2025", event: "Sustainable Future", description: "450+ kW total installed capacity" },
 ];
 
 export function AboutSection() {

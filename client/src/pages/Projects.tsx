@@ -95,9 +95,9 @@ export default function Projects() {
     : projects.filter(project => project.category === selectedCategory);
 
   const stats = [
-    { number: "500+", label: "Projects Completed", icon: <Zap className="w-6 h-6" /> },
-    { number: "50MW+", label: "Total Capacity", icon: <Building className="w-6 h-6" /> },
-    { number: "15+", label: "States Covered", icon: <MapPin className="w-6 h-6" /> },
+    { number: "65+", label: "Projects Completed", icon: <Zap className="w-6 h-6" /> },
+    { number: "450kW+", label: "Total Capacity", icon: <Building className="w-6 h-6" /> },
+    { number: "25+", label: "Cities Covered", icon: <MapPin className="w-6 h-6" /> },
     { number: "99%", label: "Success Rate", icon: <Calendar className="w-6 h-6" /> }
   ];
 

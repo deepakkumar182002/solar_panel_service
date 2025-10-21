@@ -162,9 +162,7 @@ export default function Services() {
                       </div>
                     ))}
                   </div>
-                  <Button size="lg" className="bg-gradient-to-r from-blue-600 to-green-600">
-                    Learn More
-                  </Button>
+                  
                 </div>
                 <div className={index % 2 === 1 ? 'lg:col-start-1' : ''}>
                   <img 
@@ -248,15 +246,7 @@ export default function Services() {
                 Get a Quote
               </Button>
             </Link>
-            <Link href="/contact">
-              <Button 
-                variant="outline"
-                className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors"
-                size="lg"
-              >
-                Contact Us
-              </Button>
-            </Link>
+            
           </div>
         </div>
       </section>

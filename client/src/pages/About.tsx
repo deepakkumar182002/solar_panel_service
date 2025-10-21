@@ -27,9 +27,9 @@ export default function About() {
   ];
 
   const stats = [
-    { number: "500+", label: "Projects Completed" },
-    { number: "10+", label: "Years Experience" },
-    { number: "50MW+", label: "Total Capacity Installed" },
+    { number: "65+", label: "Projects Completed" },
+    { number: "4+", label: "Years Experience" },
+    { number: "450kW+", label: "Total Capacity Installed" },
     { number: "99%", label: "Customer Satisfaction" }
   ];
 

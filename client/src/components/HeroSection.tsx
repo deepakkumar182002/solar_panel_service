@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from "/solar_panels_field_e_97867b92.jpg";
 import { Link } from "wouter";
+
 export function HeroSection() {
   return (
     <section
@@ -20,8 +20,6 @@ export function HeroSection() {
         aria-hidden
       >
         <source src="/Hero_section.mp4" type="video/mp4" />
-        {/* Fallback to background image for browsers that don't support video */}
-        <img src={heroImage} alt="solar background" />
       </video>
 
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
@@ -39,7 +37,7 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             data-testid="text-hero-title"
           >
-            Welcome to Ecosun Energy Solutions
+            Welcome to EcoSun Energy Solutions
           </motion.h1>
 
           <motion.p
@@ -58,7 +56,8 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            Leading provider of innovative solar energy solutions for residential, commercial, and industrial needs
+            Leading provider of innovative solar energy solutions for
+            residential, commercial, and industrial needs
           </motion.p>
 
           <motion.div
@@ -68,25 +67,15 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.8 }}
           >
             <Link href="/about">
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground border border-primary-border min-w-[180px]"
-              data-testid="button-get-quote"
+              <Button
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground border border-primary-border min-w-[180px]"
+                data-testid="button-get-quote"
               >
-              Get a Quote
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+                Get a Quote
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
             </Link>
-            <Link href="/contact">
-            <Button
-              size="lg"
-              variant="outline"
-              className="bg-white/10 backdrop-blur-md border-white/30 text-white hover:bg-white/20 min-w-[180px]"
-              data-testid="button-contact-us"
-              >
-              Contact Us
-            </Button>
-              </Link>
           </motion.div>
         </motion.div>
 

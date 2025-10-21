@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Calculator, Zap, DollarSign, Leaf } from "lucide-react";
+import { Calculator, Zap, IndianRupee, Leaf } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -114,7 +114,7 @@ export function SolarCalculator() {
 
                     <Card className="bg-green-500/5" data-testid="card-result-savings">
                       <CardContent className="p-6 text-center">
-                        <DollarSign className="w-8 h-8 text-green-600 dark:text-green-500 mx-auto mb-3" />
+                        <IndianRupee className="w-8 h-8 text-green-600 dark:text-green-500 mx-auto mb-3" />
                         <div className="text-3xl font-heading font-bold text-green-600 dark:text-green-500 mb-1">
                           ₹{results.monthlySavings}
                         </div>
