@@ -93,57 +93,19 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    try {
-      // Send email via API
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        // Also send to WhatsApp
-        const whatsappNumber = "918218011747";
-        const whatsappMessage = encodeURIComponent(
-          `New Contact Form Submission:\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nService: ${formData.service}\nMessage: ${formData.message}`
-        );
-        window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, "_blank");
-        
-        toast({
-          title: "Message Sent Successfully!",
-          description: "Thank you for contacting us. We'll get back to you within 24 hours.",
-        });
-        setFormData({ name: "", email: "", phone: "", service: "", message: "" });
-      } else {
-        throw new Error('Failed to send email');
-      }
-    } catch (error) {
-      console.error('Error sending message:', error);
-      
-      // Fallback to mailto if API fails
-      const emailSubject = encodeURIComponent("New Contact Form Submission - EcoSun Energy");
-      const emailBody = encodeURIComponent(
-        `New Contact Form Submission:\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nService: ${formData.service}\nMessage: ${formData.message}`
-      );
-      window.open(`mailto:info@ecosunenergysolutions.in?subject=${emailSubject}&body=${emailBody}`, "_blank");
-      
-      // Also send to WhatsApp
-      const whatsappNumber = "918218011747";
-      const whatsappMessage = encodeURIComponent(
-        `New Contact Form Submission:\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nService: ${formData.service}\nMessage: ${formData.message}`
-      );
-      window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, "_blank");
-      
-      toast({
-        title: "Message Sent!",
-        description: "Opening WhatsApp and Email for you.",
-      });
-      setFormData({ name: "", email: "", phone: "", service: "", message: "" });
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Send to WhatsApp only
+    const whatsappNumber = "918218011747";
+    const whatsappMessage = encodeURIComponent(
+      `New Contact Form Submission:\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nService: ${formData.service}\nMessage: ${formData.message}`
+    );
+    window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, "_blank");
+    
+    toast({
+      title: "Message Sent Successfully!",
+      description: "Thank you for contacting us. We'll get back to you within 24 hours.",
+    });
+    setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+    setIsSubmitting(false);
   };
 
   const regions = [
